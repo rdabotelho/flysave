@@ -64,10 +64,11 @@ def format_decolar_url(from_code: str, to_code: str, departure_date: str) -> str
 
 def get_decolar_lowest_price(from_code, to_code, departure_date):
     with sync_playwright() as p:
-        browser = p.firefox.launch(
-            headless=False,
-            slow_mo=100,
+        browser = p.chromium.launch(
+            headless=False,  # alterar para True se quiser sem UI
+            slow_mo=150,
             args=[
+                "--disable-blink-features=AutomationControlled",
                 "--no-sandbox",
                 "--disable-dev-shm-usage"
             ]
@@ -79,11 +80,12 @@ def get_decolar_lowest_price(from_code, to_code, departure_date):
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Firefox/120.0"
+                "Chrome/120.0.0.0 Safari/537.36"
             )
         )
 
         page = context.new_page()
+
         url = format_decolar_url(from_code, to_code, departure_date)
         page.goto(url, timeout=60000)
 
