@@ -1,0 +1,2 @@
+class AirlineProviderError(Exception):
+    pass
