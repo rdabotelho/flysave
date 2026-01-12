@@ -61,6 +61,17 @@ Após a execução, o executável estará em:
 
 ---
 
+## Como chamar via python
+```bash
+python3 ./app/main.py SAO BEL 2026-01-24 400
+```
+
+## Como chamar via python com .venv
+```bash
+~/Desenvolvimento/Git/flysave/.venv/bin/python ./app/main.py SAO BEL 2026-01-24 400
+echo "1xwB8A+yADP22J3ObtdZYMyc9F68ZEmhfKPSxHGN"
+```
+
 ## Como chamar o executável
 
 O programa deve ser chamado passando **três argumentos**:  
