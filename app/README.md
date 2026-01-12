@@ -24,6 +24,9 @@ Este programa consulta preços de voos no site da Decolar.com para um trecho esp
 Instale os pacotes necessários com:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 pip install requests pyinstaller
 ```
 
