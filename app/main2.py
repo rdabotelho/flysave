@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 from notify import send_sms
 from dotenv import load_dotenv
-from services.flight_price_service import FlightPriceService
+from services.amadeus_service import AmadeusService
 
 load_dotenv()
 
@@ -47,7 +47,7 @@ def find_flight_prices(from_code: str, to_code: str, date: str) -> dict | None:
     Retorna um dicionário com os preços de LATAM, Gol e Azul.
     """
     try:
-        service = FlightPriceService()
+        service = AmadeusService()
         result = service.find_prices(from_code, to_code, date)
         if not result:
             print("⚠️ Nenhum preço encontrado")
@@ -67,7 +67,7 @@ def find_flight_prices(from_code: str, to_code: str, date: str) -> dict | None:
 
 if __name__ == "__main__":
     # Teste
-    # sys.argv = ["main.py", "SAO", "BEL", "2026-01-23"]
+    sys.argv = ["main.py", "SAO", "BEL", "2026-01-23"]
 
     # Exemplo de execução: python main.py SAO BEL 2026-01-24 650
     if len(sys.argv) < 4:

@@ -87,6 +87,6 @@ def get_latam_lowest_price(from_code, to_code, departure_date):
         return price
 
 if __name__ == "__main__":
-    #price = get_latam_lowest_price("SAO", "BEL", "2026-01-24")
-    price = get_latam_lowest_price("BEL", "SAO", "2026-01-30")
+    price = get_latam_lowest_price("SAO", "BEL", "2026-01-24")
+    #price = get_latam_lowest_price("BEL", "SAO", "2026-01-30")
     print("Menor preço LATAM:", price)

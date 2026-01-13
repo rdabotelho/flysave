@@ -57,7 +57,7 @@ def format_gol_url(from_code: str, to_code: str, departure_date: str) -> str:
     )
     return url
 
-def get_gol_lowest_price(from_code, to_code, departure_date, retries=3):
+def get_gol_lowest_price(from_code, to_code, departure_date, retries=5):
     """Retorna o menor preço da Gol, com retry automático"""
     attempt = 0
     while attempt < retries:
@@ -121,6 +121,6 @@ def get_gol_lowest_price(from_code, to_code, departure_date, retries=3):
     return None
 
 if __name__ == "__main__":
-#    price = get_gol_lowest_price("SAO", "BEL", "2026-01-24")
-    price = get_gol_lowest_price("BEL", "SAO", "2026-01-30")
+    price = get_gol_lowest_price("SAO", "BEL", "2026-01-24")
+    #price = get_gol_lowest_price("BEL", "SAO", "2026-01-30")
     print("Menor preço GOL:", price)

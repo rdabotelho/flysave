@@ -55,4 +55,4 @@ def extract_from_curl(curl_file: str, env_file: str = ".env"):
 
 
 if __name__ == "__main__":
-    extract_from_curl("../curl.txt", ".env")
+    extract_from_curl("../curl.txt", ".env_dec")
